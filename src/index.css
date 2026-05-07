@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&family=Archivo:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@400;700&family=Outfit:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --font-trades: "Archivo", sans-serif;
+  --font-realestate: "Playfair Display", serif;
+  --font-prof: "Plus Jakarta Sans", sans-serif;
+  --font-hosp: "Cormorant Garamond", serif;
+  --font-ui: "Outfit", sans-serif;
+  
+  --color-frontier-blue: #3A7395;
+  --color-sunrise-orange: #FF7A00;
+  --color-summit-yellow: #B6D2E2;
+  --color-slate-gray: #2B2F33;
+  --color-cloud-white: #F5F7FA;
+  --color-deep-frontier: #224458;
+
+  /* Map existing system to new palette */
+  --color-forest: var(--color-deep-frontier);
+  --color-mist: var(--color-cloud-white);
+  --color-sand: var(--color-summit-yellow);
+  --color-charcoal: var(--color-slate-gray);
+  --color-earth: var(--color-sunrise-orange);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  body {
+    @apply bg-mist text-charcoal font-sans antialiased overflow-x-hidden;
+    text-rendering: optimizeLegibility;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-medium;
+  }
+  
+  /* Performance optimization for mobile scrolling */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  img {
+    content-visibility: auto;
+  }
+}
+
+.will-change-transform {
+  will-change: transform;
+}
+
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.glass-header {
+  @apply backdrop-blur-md bg-mist/70 border-b border-forest/10;
+}
