@@ -106,7 +106,7 @@ export default function Navbar() {
                         initial={{ opacity: 0, y: 10, scale: 0.95 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                        className="absolute top-full left-0 pt-4 w-60"
+                        className="absolute top-full left-0 pt-4 w-60 z-50"
                       >
                         <div className="bg-white rounded-2xl shadow-2xl border border-forest/5 p-3 flex flex-col gap-1 overflow-visible backdrop-blur-xl">
                           {link.dropdown.map((item) => (

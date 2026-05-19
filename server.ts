@@ -36,7 +36,7 @@ async function startServer() {
       }
 
       const data = await resend.emails.send({
-        from: "Contact Form <onboarding@resend.dev>", // Note: For production use verified domain
+        from: "Contact Form <info@frontierwebpros.com>", // Note: For production use verified domain
         to: ["info@frontierwebpros.com"],
         subject: `New Lead: ${businessName || name} - ${subject || "General Inquiry"}`,
         replyTo: email,
