@@ -64,3 +64,8 @@
 .glass-header {
   @apply backdrop-blur-md bg-mist/70 border-b border-forest/10;
 }
+
+/* Enhance logo visibility */
+img[src="/frontier.png"] {
+  filter: brightness(1.1) contrast(1.05) drop-shadow(0 4px 12px rgba(34, 68, 88, 0.2));
+}
