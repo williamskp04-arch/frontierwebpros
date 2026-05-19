@@ -1,6 +1,6 @@
 {
   "name": "Frontier Web Pros",
-  "description": "High-performance web design and digital growth solutions for small and local businesses.",
+  "description": "High-performance websites and strategic digital growth for small business owners. Modern, mobile-optimized, and results-driven.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

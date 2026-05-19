@@ -73,18 +73,31 @@ export default function About() {
       {/* Team Intro */}
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-display text-forest mb-12">Meet the Founder</h2>
-          <div className="flex flex-wrap justify-center gap-12">
+          <h2 className="text-4xl md:text-5xl font-display text-forest mb-16 italic font-light">Meet the <span className="not-italic font-bold">Founders.</span></h2>
+          <div className="flex flex-wrap justify-center gap-16 md:gap-24">
             <div className="group">
-              <div className="w-64 h-80 bg-sand rounded-2xl overflow-hidden mb-6 grayscale hover:grayscale-0 transition-all duration-500 shadow-xl border border-forest/5">
+              <div className="w-64 h-80 bg-sand rounded-3xl overflow-hidden mb-8 grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl border border-forest/5 relative">
                 <SafeImage 
-                  src="/headshot.jpeg" 
-                  alt="Kaiden Williams" 
-                  className="w-full h-full object-cover"
+                   src="/headshot.jpeg" 
+                   alt="Kaiden Williams" 
+                   className="w-full h-full object-cover"
                 />
+                <div className="absolute inset-0 bg-forest/10 group-hover:bg-transparent transition-colors"></div>
               </div>
-              <h3 className="text-xl font-display text-forest font-bold">Kaiden Williams</h3>
-              <p className="text-sm text-charcoal/40 uppercase tracking-widest mt-2">Founder</p>
+              <h3 className="text-2xl font-display text-forest font-bold">Kaiden Williams</h3>
+              <p className="text-xs text-charcoal/40 uppercase tracking-[0.3em] font-bold mt-3">Co-Founder & CEO</p>
+            </div>
+            <div className="group">
+              <div className="w-64 h-80 bg-sand rounded-3xl overflow-hidden mb-8 grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl border border-forest/5 relative">
+                <SafeImage 
+                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1000" 
+                   alt="Landon Peirce" 
+                   className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-forest/10 group-hover:bg-transparent transition-colors"></div>
+              </div>
+              <h3 className="text-2xl font-display text-forest font-bold">Landon Peirce</h3>
+              <p className="text-xs text-charcoal/40 uppercase tracking-[0.3em] font-bold mt-3">Co-Founder & CTO</p>
             </div>
           </div>
         </div>

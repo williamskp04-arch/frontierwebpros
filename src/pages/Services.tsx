@@ -7,28 +7,28 @@ export default function Services() {
   const services = [
     {
       icon: <Layout className="w-8 h-8" />,
-      title: "Get a Modern Website",
+      title: "Conversion-Focused Web Design",
       price: "499",
-      description: "Get a professional website that attracts more local customers and drives inquiries. We build high-performance sites that help small businesses look established and trustworthy from day one.",
-      features: ["Lead-Generating Landing Pages", "Mobile-Optimized Experience", "Frictionless Contact Forms", "Professional Brand Identity"],
+      description: "Own your digital territory with a high-performance website engineered to convert local visitors into loyal customers. We blend professional branding with technical excellence to build immediate trust from day one.",
+      features: ["Lead-Generating Landing Pages", "Mobile-First Infrastructure", "Frictionless Conversion Funnels", "Premium Visual Identity"],
       image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1000",
       path: "/services/web-design"
     },
     {
       icon: <Search className="w-8 h-8" />,
-      title: "Increase Your Visibility",
+      title: "Local Market Domination",
       price: "499/mo",
-      description: "Bring in more qualified leads by dominating local search results. We make sure your small business shows up exactly when and where your customers are looking for you.",
-      features: ["Local SEO Domination", "Google Business Optimization", "Targeted Keyword Strategy", "Results-Focused Reporting"],
+      description: "Scale your reach by claiming the top spot in local search results. Our strategic SEO approach ensures your small business is the first choice whenever—and wherever—customers search for your expertise.",
+      features: ["Regional Search Domination", "Google Profile Optimization", "High-Intent Keyword Targeting", "Metric-Driven Growth Reports"],
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000",
       path: "/services/seo"
     },
     {
       icon: <Smartphone className="w-8 h-8" />,
-      title: "Reliable Speed & Security",
+      title: "Managed Growth Infrastructure",
       price: "49/mo",
-      description: "Keep your website fast, secure, and always available to your customers. We handle the technical maintenance so you can focus 100% on serving your clients.",
-      features: ["Site Speed Optimization", "Total Security Protection", "Worry-Free Maintenance", "Priority Expert Support"],
+      description: "Fortify your online presence with industry-leading speed, security, and uptime. We shoulder the technical maintenance so you can dedicate 100% of your energy to scaling your operations.",
+      features: ["Next-Gen Speed Optimization", "Proactive Security Shielding", "Zero-Worry Maintenance", "Priority Technical Support"],
       image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000",
       path: "/services/hosting"
     }

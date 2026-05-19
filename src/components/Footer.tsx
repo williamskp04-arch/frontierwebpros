@@ -7,19 +7,19 @@ export default function Footer() {
   return (
     <footer className="bg-charcoal text-mist/60 py-16 px-6 border-t border-frontier-blue/10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-        <div className="space-y-6">
-          <div className="flex items-center gap-3">
+        <div className="space-y-8">
+          <div className="flex items-center gap-4">
             <img 
               src="/frontier.png"
-              className="w-10 h-10 object-contain invert opacity-80"
-              alt="Logo" 
+              className="w-12 h-12 object-contain invert opacity-90 drop-shadow-xl transition-transform hover:rotate-3"
+              alt="Frontier Web Pros Logo" 
             />
-            <span className="font-display text-xl font-bold tracking-tight text-mist">
+            <span className="font-display text-2xl font-bold tracking-tighter text-mist">
               Frontier<span className="text-frontier-blue font-light">WebPros</span>
             </span>
           </div>
-          <p className="text-sm leading-relaxed">
-            Helping small and local businesses dominate their market with high-performance websites and strategic digital solutions.
+          <p className="text-sm leading-relaxed max-w-xs">
+            Empowering local entrepreneurs and small business owners to dominate their markets with world-class digital performance.
           </p>
         </div>
 

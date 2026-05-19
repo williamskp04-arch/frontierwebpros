@@ -16,6 +16,7 @@ export default function Contact() {
     const data = {
       name: formData.get('name'),
       email: formData.get('email'),
+      businessName: formData.get('businessName'),
       subject: formData.get('subject'),
       message: formData.get('message'),
     };
@@ -103,17 +104,28 @@ export default function Contact() {
                     />
                   </div>
                 </div>
-                <div className="space-y-2">
-                  <label className="text-[10px] font-bold tracking-widest uppercase text-charcoal/40 ml-1">Subject</label>
-                  <select 
-                    name="subject"
-                    className="w-full bg-mist/50 border border-forest/10 rounded-xl px-4 py-4 focus:outline-none focus:ring-2 focus:ring-forest/10 focus:border-forest/30 transition-all appearance-none"
-                  >
-                    <option>General Inquiry</option>
-                    <option>Small Business Web Design</option>
-                    <option>Local SEO Audit Request</option>
-                    <option>Marketing Partnership</option>
-                  </select>
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold tracking-widest uppercase text-charcoal/40 ml-1">Business Name (Optional)</label>
+                    <input 
+                      name="businessName"
+                      type="text" 
+                      placeholder="Wilderness Guiding Co."
+                      className="w-full bg-mist/50 border border-forest/10 rounded-xl px-4 py-4 focus:outline-none focus:ring-2 focus:ring-forest/10 focus:border-forest/30 transition-all"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold tracking-widest uppercase text-charcoal/40 ml-1">Inquiry Type</label>
+                    <select 
+                      name="subject"
+                      className="w-full bg-mist/50 border border-forest/10 rounded-xl px-4 py-4 focus:outline-none focus:ring-2 focus:ring-forest/10 focus:border-forest/30 transition-all appearance-none"
+                    >
+                      <option>General Inquiry</option>
+                      <option>Small Business Web Design</option>
+                      <option>Local SEO Audit Request</option>
+                      <option>Marketing Partnership</option>
+                    </select>
+                  </div>
                 </div>
                 <div className="space-y-2">
                   <label className="text-[10px] font-bold tracking-widest uppercase text-charcoal/40 ml-1">Your Message</label>

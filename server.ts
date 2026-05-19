@@ -18,7 +18,7 @@ async function startServer() {
   // API routes
   app.post("/api/contact", async (req, res) => {
     try {
-      const { name, email, subject, message } = req.body;
+      const { name, email, subject, message, businessName } = req.body;
 
       // Basic validation
       if (!name || !email || !message) {
@@ -36,17 +36,26 @@ async function startServer() {
       }
 
       const data = await resend.emails.send({
-        from: "Contact Form <info@frontierwebpros.com>", // Note: For production use verified domain
+        from: "Contact Form <onboarding@resend.dev>", // Note: For production use verified domain
         to: ["info@frontierwebpros.com"],
-        subject: `New Contact Form Submission: ${subject || "General Inquiry"}`,
+        subject: `New Lead: ${businessName || name} - ${subject || "General Inquiry"}`,
         replyTo: email,
         html: `
-          <h3>New Message from Frontier Web Pros</h3>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Subject:</strong> ${subject || "General Inquiry"}</p>
-          <p><strong>Message:</strong></p>
-          <p>${message.replace(/\n/g, '<br>')}</p>
+          <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
+            <h2 style="color: #224458;">New Frontier Web Pros Lead</h2>
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Business Name:</strong> ${businessName || "Not provided"}</p>
+            <p><strong>Inquiry Type:</strong> ${subject || "General Inquiry"}</p>
+            <div style="background: #f9f9f9; padding: 15px; border-radius: 5px; margin-top: 20px;">
+              <p><strong>Message:</strong></p>
+              <p style="white-space: pre-wrap;">${message}</p>
+            </div>
+            <footer style="margin-top: 30px; font-size: 12px; color: #888;">
+              Sent from Frontier Web Pros Contact Form
+            </footer>
+          </div>
         `,
       });
 

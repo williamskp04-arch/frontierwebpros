@@ -30,8 +30,7 @@ export default function Home() {
               Your Digital Pioneers
             </span>
             <h1 className="text-6xl md:text-8xl font-display font-medium leading-[0.9] text-forest mb-8 tracking-tighter">
-              Websites Built to <br />
-              Grow Your <span className="italic font-light text-earth/60">Business.</span>
+              Websites Built to Grow Your <span className="italic font-light text-earth/60">Business.</span>
             </h1>
             <p className="text-lg text-charcoal/70 max-w-md mb-10 leading-relaxed">
               We help local business owners get more customers and more leads with high-performance websites tailored to your specific goals.
@@ -84,15 +83,15 @@ export default function Home() {
       </section>
 
       {/* Problem & Guide Section */}
-      <section className="py-24 px-6 bg-white overflow-hidden">
+      <section id="why-choose-us" className="py-24 px-6 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
           <div className="w-full md:w-1/2">
             <span className="text-sunrise-orange text-xs font-bold tracking-[0.4em] uppercase mb-4 block">The Problem</span>
             <h2 className="text-4xl md:text-5xl font-display text-forest mb-8 italic font-light">
-              Tired of a website that <span className="not-italic font-bold">doesn't bring in customers?</span>
+              Is your website <span className="not-italic font-bold">costing you customers?</span>
             </h2>
             <p className="text-lg text-charcoal/60 mb-8 leading-relaxed">
-              Most small businesses are invisible online. You’re working hard, but your website is stuck in the past, failing to generate leads while you lose ground to competitors. It’s frustrating to feel overlooked when you deserve a professional presence that actually works.
+              In today's market, an invisible business is a dying business. If your website is slow, outdated, or hard to find, you're losing qualified leads to your competitors every single day. We understand the frustration of working hard but feeling held back by your digital presence.
             </p>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
@@ -100,8 +99,8 @@ export default function Home() {
                   <Zap size={20} className="text-sunrise-orange" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-forest mb-1">Your business deserves better.</h4>
-                  <p className="text-sm text-charcoal/50">Stop wasting money on ineffective sites that don't convert.</p>
+                  <h4 className="font-bold text-forest mb-1">Your brand deserves to stand out.</h4>
+                  <p className="text-sm text-charcoal/50">Transition from an overlooked local shop to a recognized market leader.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -109,8 +108,8 @@ export default function Home() {
                   <BarChart3 size={20} className="text-forest" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-forest mb-1">We understand the frustration.</h4>
-                  <p className="text-sm text-charcoal/50">We help you build a website that becomes your most valuable employee.</p>
+                  <h4 className="font-bold text-forest mb-1">Clear strategy, real results.</h4>
+                  <p className="text-sm text-charcoal/50">We build digital tools that act as your hardest-working employees, 24/7.</p>
                 </div>
               </div>
             </div>
@@ -119,7 +118,7 @@ export default function Home() {
              <div className="aspect-[4/5] bg-sand/20 rounded-[3rem] overflow-hidden relative shadow-2xl">
                 <SafeImage 
                   src="https://images.unsplash.com/photo-1600880212340-02d956ea0a8c?auto=format&fit=crop&q=80&w=1000" 
-                  alt="Business Growth" 
+                  alt="Business Growth and Strategy" 
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-forest/40 to-transparent"></div>
@@ -132,15 +131,15 @@ export default function Home() {
       <section className="py-24 px-6 bg-sand/10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-sunrise-orange text-xs font-bold tracking-[0.4em] uppercase mb-4 block">The Plan</span>
-            <h2 className="text-4xl md:text-6xl font-display text-forest mb-6 italic font-light">Simple Steps to <span className="not-italic font-bold">Success.</span></h2>
-            <p className="text-charcoal/60 text-lg max-w-2xl mx-auto">Getting a high-performance website doesn't have to be complicated.</p>
+            <span className="text-sunrise-orange text-xs font-bold tracking-[0.4em] uppercase mb-4 block">Proven Path</span>
+            <h2 className="text-4xl md:text-6xl font-display text-forest mb-6 italic font-light">Simple Steps to <span className="not-italic font-bold">Dominate Your Market.</span></h2>
+            <p className="text-charcoal/60 text-lg max-w-2xl mx-auto">Scaling your digital presence shouldn't be complicated. We keep it simple.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-12">
             {[
-              { step: "01", title: "Choose Your Path", desc: "Select a custom build or an optimized starting layout tailored to your industry." },
-              { step: "02", title: "We Design & Optimize", desc: "We build and tailor your site specifically for your brand and business goals." },
-              { step: "03", title: "Get More Customers", desc: "Launch your site and start seeing real business growth and more leads." }
+              { step: "01", title: "Strategy Session", desc: "We sit down to understand your business goals and identify the best digital blueprint for your growth." },
+              { step: "02", title: "Custom Build & Optimize", desc: "Our team crafts a high-speed, conversion-focused site tailored specifically to your brand identity." },
+              { step: "03", title: "Launch & Scale", desc: "Go live with confidence and watch your website transform from a brochure into a lead-generation engine." }
             ].map((s, i) => (
               <div key={i} className="bg-white p-10 rounded-[2.5rem] border border-forest/5 shadow-sm text-center">
                 <div className="w-16 h-16 bg-forest text-mist rounded-full flex items-center justify-center mx-auto mb-8 text-2xl font-display font-bold">
@@ -156,20 +155,20 @@ export default function Home() {
               to="/contact" 
               className="bg-forest text-mist px-10 py-5 rounded-full font-bold inline-flex items-center gap-3 hover:scale-105 transition-transform shadow-xl"
             >
-              Request a Quote <ArrowRight size={20} />
+              Get a Fast Quote <ArrowRight size={20} />
             </NavLink>
           </div>
         </div>
       </section>
 
       {/* Services Overview */}
-      <section className="py-24 px-6 bg-forest text-mist">
+      <section id="what-we-build" className="py-32 px-6 bg-forest text-mist">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-20">
             <div className="max-w-xl">
-              <h2 className="text-4xl md:text-5xl font-display mb-6">Results-Driven Digital Strategy</h2>
+              <h2 className="text-4xl md:text-5xl font-display mb-6">Expert Solutions for the Digital Frontier</h2>
               <p className="text-mist/60 leading-relaxed">
-                Get the tools and visibility you need to dominate your local market. We focus on outcomes that matter: more traffic, better leads, and a stronger professional identity.
+                We don't just build websites; we create competitive advantages. Our services are designed to give local businesses the same technical firepower as national brands.
               </p>
             </div>
             <NavLink to="/services" className="group flex items-center gap-2 text-sand font-bold tracking-widest uppercase text-xs">
@@ -180,20 +179,20 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             <ServiceCard 
               icon={<Globe size={40} />}
-              title="Get a Modern Website"
-              description="Convert visitors into customers with a high-performance site that reflects your professionalism and builds immediate trust."
+              title="Modern Web Design"
+              description="High-performance websites designed to build immediate trust and convert local visitors into loyal customers."
               path="/services/web-design"
             />
             <ServiceCard 
               icon={<BarChart3 size={40} />}
-              title="Dominate Local Search"
-              description="Increase your visibility on Google and bring in more qualified leads from your local area who are searching for your expertise."
+              title="Local SEO Mastery"
+              description="Ensure your business appears exactly when and where your customers are searching for your expertise."
               path="/services/seo"
             />
             <ServiceCard 
               icon={<ShieldCheck size={40} />}
-              title="Stress-Free Hosting"
-              description="Keep your website fast, secure, and always available to your customers while we handle all the technical heavy lifting."
+              title="Concierge Hosting"
+              description="Fast, secure, and fully managed. We handle the tech so you can focus on running your business."
               path="/services/hosting"
             />
           </div>
@@ -201,26 +200,26 @@ export default function Home() {
       </section>
 
       {/* Featured Templates Preview Section */}
-      <section className="py-24 px-6 bg-sand/10">
+      <section id="our-work" className="py-40 px-6 bg-sand/10">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div className="max-w-2xl">
-              <span className="text-sunrise-orange text-xs font-bold tracking-[0.4em] uppercase mb-4 block">Proven Performance</span>
-              <h2 className="text-4xl md:text-6xl font-display text-forest mb-6 italic font-light">Industry <span className="not-italic font-bold">Solutions.</span></h2>
+              <span className="text-sunrise-orange text-xs font-bold tracking-[0.4em] uppercase mb-4 block">Industry Standards</span>
+              <h2 className="text-4xl md:text-6xl font-display text-forest mb-6 italic font-light">Proven <span className="not-italic font-bold">Foundations.</span></h2>
               <p className="text-charcoal/60 text-lg leading-relaxed">
-                Explore our collection of high-performance templates designed specifically for small businesses. Pre-optimized, mobile-ready, and <span className="text-forest font-bold">optimized for real business results</span>—designed to turn visitors into leads and customer inquiries.
+                Explore our collection of industry-specific layouts. These aren't just templates—they are data-driven structures <span className="text-forest font-bold">optimized for conversion</span> and built for the specific needs of local professionals.
               </p>
             </div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <NavLink to="/portfolio" className="group flex items-center gap-3 bg-forest text-mist px-8 py-4 rounded-full font-bold transition-all shadow-xl shadow-forest/10">
-                Explore All Templates
+                View All Projects
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </NavLink>
             </motion.div>
           </div>
 
           <div className="mb-12">
-            <h3 className="text-2xl font-display text-forest font-bold">Website Templates by Industry</h3>
+            <h3 className="text-2xl font-display text-forest font-bold">Optimized for Your Industry</h3>
             <div className="h-1 w-20 bg-sunrise-orange mt-2" />
           </div>
 
@@ -240,9 +239,9 @@ export default function Home() {
                   {cat.icon}
                 </div>
                 <h3 className="text-xl font-display text-forest mb-2">{cat.name}</h3>
-                <p className="text-sm text-charcoal/40 mb-4 font-medium">Starting at $499</p>
+                <p className="text-sm text-charcoal/40 mb-4 font-medium">Packages from $499</p>
                 <span className="text-xs font-bold text-sunrise-orange flex items-center gap-2">
-                  View Template <ArrowRight size={14} />
+                  View Setup <ArrowRight size={14} />
                 </span>
               </NavLink>
             ))}
@@ -251,7 +250,7 @@ export default function Home() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-24 bg-forest text-mist flex justify-center text-center px-6 overflow-hidden relative">
+      <section id="lets-talk" className="py-24 bg-forest text-mist flex justify-center text-center px-6 overflow-hidden relative">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#mist_1px,transparent_1px),linear-gradient(to_bottom,#mist_1px,transparent_1px)] bg-[size:60px_60px]"></div>
         </div>
