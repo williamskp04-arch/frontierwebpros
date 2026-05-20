@@ -177,10 +177,24 @@ export default function Navbar() {
 
           {/* Mobile Toggle */}
           <button
-            className="lg:hidden p-2 transition-colors text-forest"
+            className="lg:hidden w-10 h-10 flex items-center justify-center relative z-[60] focus:outline-none"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle Menu"
           >
-            {mobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
+            <div className="flex flex-col gap-1.5 w-6">
+              <motion.span 
+                animate={mobileMenuOpen ? { rotate: 45, y: 8, backgroundColor: "#F9FAF1" } : { rotate: 0, y: 0, backgroundColor: "#224458" }}
+                className="w-full h-0.5 rounded-full"
+              />
+              <motion.span 
+                animate={mobileMenuOpen ? { opacity: 0 } : { opacity: 1, backgroundColor: "#224458" }}
+                className="w-full h-0.5 rounded-full"
+              />
+              <motion.span 
+                animate={mobileMenuOpen ? { rotate: -45, y: -8, backgroundColor: "#F9FAF1" } : { rotate: 0, y: 0, backgroundColor: "#224458" }}
+                className="w-full h-0.5 rounded-full"
+              />
+            </div>
           </button>
         </div>
       </div>
@@ -191,60 +205,92 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-0 top-[var(--nav-height)] bg-forest z-40 lg:hidden p-8 flex flex-col overflow-y-auto"
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.1 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-0 bg-forest z-40 lg:hidden flex flex-col pt-24 px-6 pb-12 overflow-y-auto"
           >
-            <div className="flex flex-col gap-8">
-              <p className="text-[10px] font-black tracking-[0.5em] uppercase text-white/20">Navigation</p>
-              {mainLinks.map((link, i) => (
-                <motion.div
-                  key={link.path}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.2 + i * 0.1 }}
-                  className="flex flex-col gap-4"
-                >
-                  <NavLink
-                    to={link.path}
-                    className="text-4xl font-display text-mist/60 hover:text-white transition-colors"
+            <div className="flex flex-col items-center gap-12">
+              <p className="text-[10px] font-black tracking-[0.5em] uppercase text-white/20 text-center">Menu</p>
+              
+              <div className="flex flex-col items-center gap-8 w-full">
+                {mainLinks.map((link, i) => (
+                  <motion.div
+                    key={link.path}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 + i * 0.05 }}
+                    className="flex flex-col items-center w-full"
                   >
-                    {link.name}
-                  </NavLink>
-                  {link.dropdown && (
-                    <div className="flex flex-col gap-3 pl-6 border-l border-white/10">
-                      {link.dropdown.map((item) => (
-                        <div key={item.path} className="flex flex-col gap-2">
-                          <NavLink to={item.path} className="text-mist/40 text-lg font-display hover:text-white">{item.name}</NavLink>
-                          {item.submenu && item.submenu.map(sub => (
-                             <NavLink key={sub.path} to={sub.path} className="text-mist/20 text-sm pl-4 border-l border-white/5 hover:text-white">{sub.name}</NavLink>
-                          ))}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </motion.div>
-              ))}
+                    <NavLink
+                      to={link.path}
+                      className={({ isActive }) => cn(
+                        "text-xl font-display tracking-tight transition-colors py-1",
+                        isActive ? "text-sunrise-orange" : "text-mist/80 hover:text-white"
+                      )}
+                    >
+                      {link.name}
+                    </NavLink>
+                    
+                    {link.dropdown && (
+                      <div className="flex flex-col items-center gap-4 mt-4 w-full">
+                        {link.dropdown.map((item) => (
+                          <div key={item.path} className="flex flex-col items-center">
+                            <NavLink 
+                              to={item.path} 
+                              className="text-mist/40 text-base font-display hover:text-mist/70 transition-colors py-1"
+                            >
+                              {item.name}
+                            </NavLink>
+                            {item.submenu && (
+                              <div className="flex flex-col items-center gap-3 mt-3">
+                                {item.submenu.map(sub => (
+                                  <NavLink 
+                                    key={sub.path} 
+                                    to={sub.path} 
+                                    className="text-mist/20 text-sm font-display hover:text-mist/50 transition-colors py-1"
+                                  >
+                                    {sub.name}
+                                  </NavLink>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </motion.div>
+                ))}
+              </div>
             </div>
             
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
-              className="mt-12 space-y-8"
+              transition={{ delay: 0.4 }}
+              className="mt-auto pt-12 space-y-10 flex flex-col items-center w-full"
             >
-              <div className="h-px bg-white/10 w-full" />
-              <NavLink
-                to="/contact"
-                className="bg-sunrise-orange text-mist px-6 py-5 rounded-2xl text-center font-bold text-xl block shadow-2xl shadow-sunrise-orange/20"
-              >
-                Request a Quote
-              </NavLink>
-              <p className="text-mist/30 text-xs text-center tracking-[0.4em] uppercase font-bold pb-12">
-                Frontier Web Pros
-              </p>
+              <div className="h-px bg-white/5 w-full max-w-[120px]" />
+              
+              <div className="w-full max-w-[280px]">
+                <NavLink
+                  to="/contact"
+                  className="bg-sunrise-orange text-mist px-8 py-4 rounded-xl text-center font-bold text-base block shadow-xl shadow-sunrise-orange/10 active:scale-95 transition-all"
+                >
+                  Request a Quote
+                </NavLink>
+              </div>
+
+              <div className="flex flex-col items-center gap-6">
+                <p className="text-mist/20 text-[9px] tracking-[0.4em] uppercase font-bold">
+                  Frontier Web Pros
+                </p>
+                <div className="flex gap-8 text-mist/10 text-xs">
+                  <a href="#" className="hover:text-sunrise-orange transition-colors">Instagram</a>
+                  <a href="#" className="hover:text-sunrise-orange transition-colors">LinkedIn</a>
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         )}

@@ -177,7 +177,7 @@ export default function Portfolio() {
           <div className="flex flex-col md:flex-row justify-between items-end gap-12">
             <div className="max-w-2xl">
               <span className="text-sunrise-orange text-xs font-bold tracking-[0.4em] uppercase mb-4 block">Proven Starting Points</span>
-              <h1 className="text-5xl md:text-7xl font-display mb-6">Optimized <span className="italic font-light">Layouts.</span></h1>
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-display mb-6">Optimized <span className="italic font-light">Layouts.</span></h1>
               <p className="text-charcoal/50 leading-relaxed text-lg">
                 Don't settle for cookie-cutter. Start with an industry-vetted layout designed for results, then we'll customize it completely to match your business goals and unique brand.
               </p>
@@ -894,7 +894,7 @@ function TradeTemplatePreview({ viewMode, color }: { viewMode: 'desktop' | 'mobi
                   </div>
                   <div>
                     <div className="text-[10px] uppercase tracking-widest text-mist/40 mb-1">Email Us</div>
-                    <div className="text-xl font-bold">info@frontierwebpros.com</div>
+                    <div className="text-xl font-bold">frontoffice@frontierwebpros.com</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-6 group">

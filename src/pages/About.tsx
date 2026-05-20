@@ -15,7 +15,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <span className="text-forest text-xs font-bold tracking-[0.4em] uppercase mb-6 block">Our Story</span>
-            <h1 className="text-5xl md:text-7xl font-display text-forest mb-8 leading-[0.9]">Forging Paths in the <span className="italic font-light">Wild Web.</span></h1>
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-display text-forest mb-8 leading-[0.9]">Forging Paths in the <span className="italic font-light">Wild Web.</span></h1>
             <div className="space-y-6 text-charcoal/70 leading-relaxed text-lg">
               <p>
                 Frontier Web Pros started with a simple observation: small business owners are masters of their craft, but the digital world can feel like an uncharted wilderness.

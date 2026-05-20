@@ -29,22 +29,22 @@ export default function Home() {
             <span className="inline-block px-4 py-1.5 bg-forest/5 text-forest text-xs font-bold tracking-widest uppercase rounded-full mb-6 border border-forest/10">
               Your Digital Pioneers
             </span>
-            <h1 className="text-6xl md:text-8xl font-display font-medium leading-[0.9] text-forest mb-8 tracking-tighter">
+            <h1 className="text-5xl sm:text-6xl md:text-8xl font-display font-medium leading-[0.9] text-forest mb-8 tracking-tighter">
               Websites Built to Grow Your <span className="italic font-light text-earth/60">Business.</span>
             </h1>
-            <p className="text-lg text-charcoal/70 max-w-md mb-10 leading-relaxed">
+            <p className="text-base sm:text-lg text-charcoal/70 max-w-md mb-10 leading-relaxed">
               We help local business owners get more customers and more leads with high-performance websites tailored to your specific goals.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <NavLink 
                 to="/contact" 
-                className="bg-forest text-mist px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:bg-forest/90 transition-transform hover:scale-105 shadow-lg"
+                className="bg-forest text-mist px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-forest/90 transition-transform hover:scale-105 shadow-lg"
               >
                 Build My Website <ArrowRight size={18} />
               </NavLink>
               <NavLink 
                 to="/portfolio" 
-                className="px-8 py-4 rounded-full font-bold border border-forest/20 text-forest hover:bg-forest/5 transition-all"
+                className="px-8 py-4 rounded-full font-bold border border-forest/20 text-forest hover:bg-forest/5 transition-all text-center"
               >
                 Explore Layouts
               </NavLink>
@@ -87,7 +87,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
           <div className="w-full md:w-1/2">
             <span className="text-sunrise-orange text-xs font-bold tracking-[0.4em] uppercase mb-4 block">The Problem</span>
-            <h2 className="text-4xl md:text-5xl font-display text-forest mb-8 italic font-light">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display text-forest mb-8 italic font-light">
               Is your website <span className="not-italic font-bold">costing you customers?</span>
             </h2>
             <p className="text-lg text-charcoal/60 mb-8 leading-relaxed">
@@ -132,7 +132,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-sunrise-orange text-xs font-bold tracking-[0.4em] uppercase mb-4 block">Proven Path</span>
-            <h2 className="text-4xl md:text-6xl font-display text-forest mb-6 italic font-light">Simple Steps to <span className="not-italic font-bold">Dominate Your Market.</span></h2>
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-display text-forest mb-6 italic font-light">Simple Steps to <span className="not-italic font-bold">Dominate Your Market.</span></h2>
             <p className="text-charcoal/60 text-lg max-w-2xl mx-auto">Scaling your digital presence shouldn't be complicated. We keep it simple.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-12">

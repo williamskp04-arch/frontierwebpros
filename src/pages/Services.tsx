@@ -44,7 +44,7 @@ export default function Services() {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-2xl"
           >
-            <h1 className="text-5xl md:text-7xl font-display text-forest mb-6 tracking-tight">Built for Your <span className="italic font-light text-earth/60">Success.</span></h1>
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-display text-forest mb-6 tracking-tight">Built for Your <span className="italic font-light text-earth/60">Success.</span></h1>
             <p className="text-lg text-charcoal/60 leading-relaxed">
               We provide the essential digital tools small and local businesses need to grow, attract more clients, and reach their goals without the technical headaches.
             </p>

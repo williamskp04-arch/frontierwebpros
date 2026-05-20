@@ -52,7 +52,7 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-3 group">
               <Mail size={18} className="text-mist shrink-0" />
-              <a href="mailto:info@frontierwebpros.com" className="hover:text-mist transition-colors">info@frontierwebpros.com</a>
+              <a href="mailto:frontoffice@frontierwebpros.com" className="hover:text-mist transition-colors">frontoffice@frontierwebpros.com</a>
             </div>
           </div>
         </div>
