@@ -25,7 +25,20 @@ export default function Navbar() {
     setWebDesignOpen(false);
   }, [location]);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
   const mainLinks = [
+    { name: 'Home', path: '/' },
     { 
       name: 'Services', 
       path: '/services',
@@ -205,20 +218,21 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.1 }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 bg-forest z-40 lg:hidden flex flex-col pt-24 px-6 pb-12 overflow-y-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 bg-forest/98 backdrop-blur-3xl z-40 lg:hidden flex flex-col h-[100dvh] overflow-hidden"
           >
-            <div className="flex flex-col items-center gap-12">
-              <p className="text-[10px] font-black tracking-[0.5em] uppercase text-white/20 text-center">Menu</p>
-              
-              <div className="flex flex-col items-center gap-8 w-full">
+            {/* Safe area for header */}
+            <div className="h-[88px] flex-shrink-0" />
+
+            <div className="flex-1 flex flex-col items-center justify-center p-6 space-y-6 min-h-0">
+              <div className="flex flex-col items-center gap-3 w-full">
                 {mainLinks.map((link, i) => (
                   <motion.div
                     key={link.path}
-                    initial={{ opacity: 0, y: 15 }}
+                    initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 + i * 0.05 }}
                     className="flex flex-col items-center w-full"
@@ -226,30 +240,30 @@ export default function Navbar() {
                     <NavLink
                       to={link.path}
                       className={({ isActive }) => cn(
-                        "text-xl font-display tracking-tight transition-colors py-1",
-                        isActive ? "text-sunrise-orange" : "text-mist/80 hover:text-white"
+                        "text-lg font-display tracking-tight transition-all py-1",
+                        isActive ? "text-sunrise-orange scale-105" : "text-mist/90 hover:text-white"
                       )}
                     >
                       {link.name}
                     </NavLink>
                     
                     {link.dropdown && (
-                      <div className="flex flex-col items-center gap-4 mt-4 w-full">
+                      <div className="flex flex-col items-center gap-1 mt-1 opacity-60">
                         {link.dropdown.map((item) => (
                           <div key={item.path} className="flex flex-col items-center">
                             <NavLink 
                               to={item.path} 
-                              className="text-mist/40 text-base font-display hover:text-mist/70 transition-colors py-1"
+                              className="text-mist/70 text-[10px] uppercase tracking-widest font-bold hover:text-mist transition-colors py-0.5"
                             >
                               {item.name}
                             </NavLink>
                             {item.submenu && (
-                              <div className="flex flex-col items-center gap-3 mt-3">
+                              <div className="flex flex-col items-center gap-0.5 opacity-60">
                                 {item.submenu.map(sub => (
                                   <NavLink 
                                     key={sub.path} 
                                     to={sub.path} 
-                                    className="text-mist/20 text-sm font-display hover:text-mist/50 transition-colors py-1"
+                                    className="text-mist/50 text-[9px] uppercase tracking-[0.2em] font-black hover:text-mist transition-colors py-0.5"
                                   >
                                     {sub.name}
                                   </NavLink>
@@ -263,32 +277,36 @@ export default function Navbar() {
                   </motion.div>
                 ))}
               </div>
-            </div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="mt-auto pt-12 space-y-10 flex flex-col items-center w-full"
-            >
-              <div className="h-px bg-white/5 w-full max-w-[120px]" />
               
-              <div className="w-full max-w-[280px]">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.3 }}
+                className="w-full max-w-[180px]"
+              >
                 <NavLink
                   to="/contact"
-                  className="bg-sunrise-orange text-mist px-8 py-4 rounded-xl text-center font-bold text-base block shadow-xl shadow-sunrise-orange/10 active:scale-95 transition-all"
+                  className="bg-sunrise-orange text-mist px-6 py-2.5 rounded-full text-center font-bold text-[10px] block shadow-lg shadow-sunrise-orange/10 active:scale-95 transition-all uppercase tracking-[0.2em]"
                 >
                   Request a Quote
                 </NavLink>
-              </div>
+              </motion.div>
+            </div>
 
-              <div className="flex flex-col items-center gap-6">
-                <p className="text-mist/20 text-[9px] tracking-[0.4em] uppercase font-bold">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="flex-shrink-0 pb-8 flex flex-col items-center gap-3"
+            >
+              <div className="h-px bg-white/5 w-12" />
+              <div className="flex flex-col items-center gap-1.5">
+                <p className="text-mist/20 text-[6px] tracking-[0.4em] uppercase font-black">
                   Frontier Web Pros
                 </p>
-                <div className="flex gap-8 text-mist/10 text-xs">
-                  <a href="#" className="hover:text-sunrise-orange transition-colors">Instagram</a>
-                  <a href="#" className="hover:text-sunrise-orange transition-colors">LinkedIn</a>
+                <div className="flex gap-8 text-mist/30 text-[8px] tracking-widest uppercase font-bold">
+                  <a href="#" className="hover:text-sunrise-orange transition-colors">Insta</a>
+                  <a href="#" className="hover:text-sunrise-orange transition-colors">In</a>
                 </div>
               </div>
             </motion.div>
